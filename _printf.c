@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf – formats and print input string
+ * _printf – formatted output conversion and print data.
  * @format: input string.
  *
  * Return: number of printed chars
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			handle_buffer(buffer, format[i], buffer_index), printed_chars++;
-		for (buffer_index = printed_chars; buffer_index >= 1024; buffer_index -= 1024)
+		for (buffer_index = printed_chars; buffer_index > 1024; buffer_index -= 1024)
 			;
 	}
 	print_buffer(buffer, buffer_index), free(buffer), va_end(arguments);
